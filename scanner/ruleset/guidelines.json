@@ -1,0 +1,27 @@
+{
+  "4.3": {
+    "title": "4.3 Spam",
+    "text": "Don't submit near-duplicate apps, or apps whose metadata is stuffed with keywords to game search ranking.",
+    "rejection_rate": 0.28
+  },
+  "2.1": {
+    "title": "2.1 App Completeness",
+    "text": "Apps that crash, exhibit obvious bugs, or contain broken links will be rejected.",
+    "rejection_rate": 0.22
+  },
+  "5.1.1": {
+    "title": "5.1.1 Data Collection and Storage",
+    "text": "Apps must have a privacy manifest that accurately declares use of required-reason APIs and the data they collect.",
+    "rejection_rate": 0.1
+  },
+  "2.5.6": {
+    "title": "2.5.6 Software Requirements (Accessory/Hardware Use)",
+    "text": "Apps that use hardware/accessory frameworks (Bluetooth, HomeKit, etc.) must declare a usage-description string explaining why.",
+    "rejection_rate": 0.04
+  },
+  "1.2": {
+    "title": "1.2 User-Generated Content",
+    "text": "Apps with user-generated content must include a method for filtering objectionable material, a mechanism to report offensive content, and the ability to block abusive users.",
+    "rejection_rate": 0.06
+  }
+}
