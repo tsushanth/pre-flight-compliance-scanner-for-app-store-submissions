@@ -34,17 +34,23 @@ def collect_findings(project):
     return findings
 
 
+TITLE_WIDTH = 50
+
+
 def print_table(findings):
     if not findings:
         print("No likely rejection triggers found.")
         return
 
-    header = f"{'GUIDELINE':<10}{'CONF':<6}{'TITLE':<50}{'LOCATION'}"
+    header = f"{'GUIDELINE':<10}{'CONF':<6}{'TITLE':<{TITLE_WIDTH}}{'LOCATION'}"
     print(header)
     print("-" * len(header))
     for finding in findings:
         location = finding.file + (f":{finding.line}" if finding.line else "")
-        print(f"{finding.guideline:<10}{finding.confidence:<6.2f}{finding.title[:50]:<50}{location}")
+        title = finding.title
+        if len(title) > TITLE_WIDTH - 1:
+            title = title[: TITLE_WIDTH - 4] + "..."
+        print(f"{finding.guideline:<10}{finding.confidence:<6.2f}{title:<{TITLE_WIDTH}}{location}")
         print(f"    evidence: {finding.evidence}")
         print(f"    fix:      {finding.fix}")
         print()
